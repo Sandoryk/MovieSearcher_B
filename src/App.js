@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -18,4 +18,23 @@ class App extends Component {
   }
 }
 
-export default App;
+export const createElement = React.createElement(
+"h1",
+{className: "App"},
+"Hello, React.createElement!"
+)
+  
+export class CreateComponent extends Component {
+  render() {
+  return <h1 className="App">Hello, React.Component!</h1>;
+  }
+}
+
+export class CreatePureComponent extends PureComponent {
+  render() {
+  return <h1 className="App">Hello, React.PureComponent!</h1>;
+  }
+}
+
+export const createFuncComponent = () => (<h1 className="App">Hello, Functional component!</h1>)
+
