@@ -30,7 +30,7 @@ export default class SearchPanel extends React.Component { // eslint-disable-lin
                 id="searchField" 
                 defaultValue={this.state.searchString} 
                 onChange={this.updateInputValue.bind(this)}/>
-            <Button className='' caption='Search' onClick={this.setFilter.bind(this)}/>
+            <Button className='search-button' caption='Search' onClick={this.setFilter.bind(this)}/>
         </div>
         );
     }

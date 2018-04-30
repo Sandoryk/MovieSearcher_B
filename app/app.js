@@ -19,6 +19,7 @@ import './styles.css';
 
 // Import root app
 import App from 'containers/App';
+import ErrorBoundary from 'containers/ErrorBoundary';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -53,7 +54,9 @@ const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </ConnectedRouter>
     </Provider>,
     MOUNT_NODE
