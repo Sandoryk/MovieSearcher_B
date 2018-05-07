@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Caption(props) {
+const Caption = (props) => {
   return (
-  <span className={props.className}>
-    <p>{props.value}</p>
-  </span>
-  );
+    <span className={props.className}>
+      <p>{props.value}</p>
+    </span>
+    );
 }
 
 Caption.propTypes = {

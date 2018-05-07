@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
-  <div className="footer">
-    <p>NetflixRoulette</p>
-  </div>
-  );
+    <div className="footer">
+      <p>NetflixRoulette</p>
+    </div>
+    );
 }
 
 export default Footer;

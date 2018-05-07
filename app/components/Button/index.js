@@ -9,7 +9,7 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 
-function Button(props) {
+const Button = (props) => {
   return (
     <button className={props.className} onClick={(props.onClick)}>{props.caption}</button>
   );
