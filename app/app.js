@@ -15,12 +15,11 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
+import './styles.css';
 
 // Import root app
 import App from 'containers/App';
-
-// Import Language Provider
-import LanguageProvider from 'containers/LanguageProvider';
+import ErrorBoundary from 'containers/ErrorBoundary';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -54,11 +53,11 @@ const MOUNT_NODE = document.getElementById('app');
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
-      <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </ConnectedRouter>
-      </LanguageProvider>
     </Provider>,
     MOUNT_NODE
   );
