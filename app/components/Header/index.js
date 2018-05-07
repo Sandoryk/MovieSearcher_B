@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Img from './Img';
-import Banner from './movie_banner.jpg';
+import Banner from './banner.jpg';
 
 class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {

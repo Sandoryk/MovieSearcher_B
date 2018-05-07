@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 const Caption = (props) => {
   return (
-    <span className={props.className}>
-      <p>{props.value}</p>
-    </span>
+    <span className={props.className}>{props.value}</span>
     );
 }
 

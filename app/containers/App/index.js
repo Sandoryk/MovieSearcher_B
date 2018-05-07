@@ -14,6 +14,8 @@ import { Switch, Route } from 'react-router-dom';
 import Footer from 'components/Footer';
 import Caption from 'components/Caption';
 import SearchPanel from 'containers/SearchPanel';
+import BackgroundImage from 'components/BackgroundImage';
+import FilmThumbnail from 'components/FilmThumbnail';
 
 export default function App() {
   return (
@@ -24,7 +26,9 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
+      <BackgroundImage/>
       <SearchPanel value='Quentin Tarantino'/>
+      <FilmThumbnail filmTitle='DJANGO UNCHAINED' releaseDate='2012' filmGenre='Adventure'/>
       {/* <Header/>
       <Switch>
         <Route exact path="/" component={HomePage} />
