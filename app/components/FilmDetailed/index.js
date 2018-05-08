@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import image from './django.jpg';
+import image from '../FilmThumbnail/django.jpg';
 import Img from 'components/Img';
 import Caption from 'components/Caption';
 
-const FilmThumbnail = (props) => {
+const FilmDetailed = (props) => {
     return (
         <div className='film-thumbnail-width'>
             <Img className='film-thumbnail film-thumbnail-width' src={image}/>
@@ -22,4 +22,4 @@ const FilmThumbnail = (props) => {
 //     value: PropTypes.string
 //   };
 
-  export default FilmThumbnail;
+  export default FilmDetailed;

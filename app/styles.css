@@ -69,8 +69,19 @@ footer {
 {
     float: right;
 }
+.film-thumbnail-width{
+    width: 300px;
+}
 .film-thumbnail {
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 300px;
+}
+.font-size-little{
+    font-size: 12px;
+}
+.border-solid{
+    border: 1px solid rgb(0, 0, 0);
+}
+.color-white{
+    color: white;
 }

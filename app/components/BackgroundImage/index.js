@@ -3,14 +3,19 @@ import styled from 'styled-components';
 
 import Banner from './movie_banner.jpg';
 
-const BGIWrapper = styled.div`
-    background-image: url({Banner});
-    `;
-
 class BackgroundImage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-    render() {
+  constructor(props) {
+    super(props);
+
+    this.style = {
+      width: `${props.width}`,
+      height: `${props.height}`,
+      backgroundImage: `url(${Banner})`
+    };
+  }  
+  render() {
       return (
-        <BGIWrapper/>
+        <div style={this.style}>{this.props.children}</div>
       );
     }
   }

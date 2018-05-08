@@ -23,7 +23,7 @@ export default class SearchMode extends React.Component { // eslint-disable-line
     render() {
         return (
         <div className='inline-block'>
-            <Label className='searchField-label' value='SEARCH BY'/>
+            <Label className='searchField-label color-white' value='SEARCH BY'/>
             <Button className={'mode-button ' + (this.state.titleMode?this.state.focusColor:'')} caption='TITLE' onClick={this.setMode.bind(this)}/>
             <Button className={'mode-button ' + (!this.state.titleMode?this.state.focusColor:'')} caption='GENRE' onClick={this.setMode.bind(this)}/>
         </div>
