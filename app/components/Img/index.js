@@ -20,8 +20,8 @@ Img.propTypes = {
     PropTypes.string,
     PropTypes.object,
   ]).isRequired,
-  alt: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  alt: PropTypes.string,
+  className: PropTypes.string.isRequired,
 };
 
 export default Img;
