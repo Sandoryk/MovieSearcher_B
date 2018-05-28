@@ -1,36 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Label from 'components/Label';
 import Button from 'components/Button';
+import { setSearchFilterMode } from '../App/actions';
+import { searchBy } from '../../stateValues';
 
-export default class SearchMode extends React.Component { // eslint-disable-line react/prefer-stateless-function
-    constructor(props) {
-        super(props); 
-        let mode = props.value == undefined || props.value == true ? true: false;
-        this.state = {
-            titleMode: mode,
-            focusColor: 'button-background-color'
-        };
-    }
+class SearchMode extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.focusColor = 'button-background-color';
+  }
 
-    setMode(){
-        this.setState({
-            titleMode: !this.state.titleMode
-        });
-    }
+  render() {
+    return (
+      <div className='inline-block'>
+        <Label className='searchField-label color-white' value='SEARCH BY'/>
+        <Button className={'mode-button ' + (this.props.searchByMode==searchBy.title ? this.focusColor:'')} 
+          caption='TITLE'
+          onClick= { () => this.props.setChangeFilter(searchBy.title) }/>
+        <Button className={'mode-button ' + (this.props.searchByMode==searchBy.genre?this.focusColor:'')} 
+          caption='GENRE'
+          onClick={ () => this.props.setChangeFilter(searchBy.genre) }/>
+      </div>
+    );
+  }
+}
 
-    render() {
-        return (
-        <div className='inline-block'>
-            <Label className='searchField-label color-white' value='SEARCH BY'/>
-            <Button className={'mode-button ' + (this.state.titleMode?this.state.focusColor:'')} caption='TITLE' onClick={this.setMode.bind(this)}/>
-            <Button className={'mode-button ' + (!this.state.titleMode?this.state.focusColor:'')} caption='GENRE' onClick={this.setMode.bind(this)}/>
-        </div>
-        );
+SearchMode.propTypes = {
+    searchByMode: PropTypes.string,
+    setChangeFilter: PropTypes.func
+};
+
+const mapStateToProps = state => {
+    return {
+        searchByMode: state.getIn(['global', 'searchedBy'])
     }
 }
 
-Label.propTypes = {
-    value: PropTypes.string
-};
+const mapDispatchToProps = dispatch => {
+    return {
+        setChangeFilter: searchBy => { dispatch(setSearchFilterMode(searchBy)) }
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SearchMode)

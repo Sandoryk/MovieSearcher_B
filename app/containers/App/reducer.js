@@ -11,11 +11,14 @@
  */
 
 import { fromJS } from 'immutable';
+import { searchBy, sortBy } from '../../stateValues';
 
 import {
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS,
   LOAD_REPOS_ERROR,
+  SET_SEARCH_FILTER,
+  SET_SORTING,
 } from './constants';
 
 // The initial state of the App
@@ -26,6 +29,9 @@ const initialState = fromJS({
   userData: {
     repositories: false,
   },
+  searchedBy: searchBy.title,
+  sortedBy: sortBy.releaseDay,
+  resultsCount: 0
 });
 
 function appReducer(state = initialState, action) {
@@ -44,6 +50,12 @@ function appReducer(state = initialState, action) {
       return state
         .set('error', action.error)
         .set('loading', false);
+    case SET_SEARCH_FILTER:
+      return state
+        .set('searchedBy', action.filter);
+    case SET_SORTING:
+      return state
+        .set('sortedBy', action.sorting);
     default:
       return state;
   }

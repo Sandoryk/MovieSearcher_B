@@ -28,7 +28,8 @@ export default class SearchPanel extends React.Component { // eslint-disable-lin
             <BackgroundImage width='100%' height="200px">
             <Label className='searchField-label color-white' value='FIND YOUR MOVIE'/>
             <input className='searchField' 
-                type="text" name="searchField" 
+                type="text"
+                name="searchField" 
                 id="searchField" 
                 defaultValue={this.state.searchString} 
                 onChange={this.updateInputValue.bind(this)}/>
@@ -40,6 +41,6 @@ export default class SearchPanel extends React.Component { // eslint-disable-lin
     }
 }
 
-Label.propTypes = {
+SearchPanel.propTypes = {
     value: PropTypes.string
 };
