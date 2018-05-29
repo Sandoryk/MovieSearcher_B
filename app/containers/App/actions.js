@@ -67,13 +67,13 @@ export function repoLoadingError(error) {
 export function setSearchFilterMode(searchBy) {
   return {
     type: SET_SEARCH_FILTER,
-    filter: searchBy,
+    payload: searchBy,
   };
 }
 
 export function setSortingMode(sortBy) {
   return {
     type: SET_SORTING,
-    sorting: sortBy,
+    payload: sortBy,
   };
 }

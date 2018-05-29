@@ -31,7 +31,7 @@ const initialState = fromJS({
   },
   searchedBy: searchBy.title,
   sortedBy: sortBy.releaseDay,
-  resultsCount: 0
+  resultsCount: 0,
 });
 
 function appReducer(state = initialState, action) {
@@ -52,10 +52,10 @@ function appReducer(state = initialState, action) {
         .set('loading', false);
     case SET_SEARCH_FILTER:
       return state
-        .set('searchedBy', action.filter);
+        .set('searchedBy', action.payload);
     case SET_SORTING:
       return state
-        .set('sortedBy', action.sorting);
+        .set('sortedBy', action.payload);
     default:
       return state;
   }

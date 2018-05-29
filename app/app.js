@@ -53,11 +53,11 @@ const MOUNT_NODE = document.getElementById('app');
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <ErrorBoundary>
-            <App />
-          </ErrorBoundary>
-        </ConnectedRouter>
+      <ConnectedRouter history={history}>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </ConnectedRouter>
     </Provider>,
     MOUNT_NODE
   );
