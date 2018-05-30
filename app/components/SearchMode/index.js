@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Label from 'components/Label';
 import Button from 'components/Button';
-import { setSearchFilterMode } from '../App/actions';
+import { setSearchFilterMode } from 'containers/App/actions';
 import { searchBy } from '../../stateValues';
 
 class SearchMode extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -40,7 +40,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setChangeFilter: (searchByParam) => { dispatch(setSearchFilterMode(searchByParam)); },
+  setChangeFilter: (searchByParam) => dispatch(setSearchFilterMode(searchByParam)),
 });
 
 export default connect(

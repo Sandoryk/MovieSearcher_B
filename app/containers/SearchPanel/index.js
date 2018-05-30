@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Label from 'components/Label';
 import Button from 'components/Button';
-import SearchMode from 'containers/SearchMode';
+import SearchMode from 'components/SearchMode';
 import BackgroundImage from 'components/BackgroundImage';
 
 export default class SearchPanel extends React.Component { // eslint-disable-line react/prefer-stateless-function
