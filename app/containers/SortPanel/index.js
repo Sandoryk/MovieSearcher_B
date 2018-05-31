@@ -16,7 +16,7 @@ class SortPanel extends React.Component { // eslint-disable-line react/prefer-st
     return (
       <div className="inline-block">
         <Caption value={`${this.props.resultsCount} movies found`} />
-        <span className="float-right">
+        <div className="float-right">
           <Label value="Sort by" />
           <Button
             className={`mode-button ${(this.props.sortByMode == sortBy.releaseDay ? this.focusColor : '')}`}
@@ -28,14 +28,14 @@ class SortPanel extends React.Component { // eslint-disable-line react/prefer-st
             caption="rating"
             onClick={() => this.props.setSorting(sortBy.rating)}
           />
-        </span>
+        </div>
       </div>
     );
   }
 }
 
 SortPanel.propTypes = {
-  resultsCount: PropTypes.string,
+  resultsCount: PropTypes.number,
   sortByMode: PropTypes.string,
   setSorting: PropTypes.func,
 };
