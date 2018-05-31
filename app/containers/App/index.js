@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
-// import FeaturePage from 'containers/FeaturePage/Loadable';
+import FilmPage from 'containers/FilmPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Footer from 'components/Footer';
 
@@ -19,15 +19,15 @@ export default function App() {
   return (
     <div className="app">
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Movie searcher"
+        defaultTitle="Movie searcher"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="A Movie searcher application" />
       </Helmet>
       {/* <Header/> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
-        {/* <Route path="/features" component={FeaturePage} /> */}
+        <Route path="/film" component={FilmPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

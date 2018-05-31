@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import image from './django.jpg';
 import Img from 'components/Img';
 import Caption from 'components/Caption';
+import image from './django.jpg';
 
-const FilmThumbnail = (props) => {
-    return (
-        <div className='film-thumbnail-width'>
-            <Img className='film-thumbnail film-thumbnail-width' src={image}/>
-            <div>
-                <Caption value={props.filmTitle}/>
-                <Caption className='float-right border-solid' value={props.releaseDate}/>
-            </div>
-            <Caption className='font-size-little' value={props.filmGenre}/>
-        </div>
-    );
-  }
-  
-//   Label.propTypes = {
-//     value: PropTypes.string
-//   };
+const FilmThumbnail = (props) => (
+  <div className="film-thumbnail-width">
+    <Img className="film-thumbnail film-thumbnail-width" src={image} />
+    <div>
+      <Caption value={props.filmTitle} />
+      <Caption className="float-right border-solid" value={props.releaseDate} />
+    </div>
+    <Caption className="font-size-little" value={props.filmGenre} />
+  </div>
+);
 
-  export default FilmThumbnail;
+FilmThumbnail.propTypes = {
+  filmTitle: PropTypes.string,
+  releaseDate: PropTypes.string,
+  filmGenre: PropTypes.string,
+};
+
+export default FilmThumbnail;
