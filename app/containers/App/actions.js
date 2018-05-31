@@ -19,6 +19,8 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
+  SET_SEARCH_FILTER,
+  SET_SORTING,
 } from './constants';
 
 /**
@@ -59,5 +61,19 @@ export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
     error,
+  };
+}
+
+export function setSearchFilterMode(searchBy) {
+  return {
+    type: SET_SEARCH_FILTER,
+    payload: searchBy,
+  };
+}
+
+export function setSortingMode(sortBy) {
+  return {
+    type: SET_SORTING,
+    payload: sortBy,
   };
 }
