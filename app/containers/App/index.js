@@ -8,33 +8,28 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-// import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
+import HomePage from 'containers/HomePage/Loadable';
+import FilmPage from 'containers/FilmPage/Loadable';
+import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Footer from 'components/Footer';
-import SearchPanel from 'containers/SearchPanel';
-import SortPanel from 'containers/SortPanel';
-// import FilmThumbnail from 'components/FilmThumbnail';
-import FilmDetailed from 'components/FilmDetailed';
 
 export default function App() {
   return (
     <div className="app">
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Movie searcher"
+        defaultTitle="Movie searcher"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="A Movie searcher application" />
       </Helmet>
-      <SearchPanel value="Quentin Tarantino" />
-      <SortPanel />
-      {/* <FilmThumbnail filmTitle='DJANGO UNCHAINED' releaseDate='2012' filmGenre='Adventure'/> */}
-      <FilmDetailed filmTitle="DJANGO UNCHAINED" releaseDate="2012" filmGenre="Adventure" />
-      {/* <Header/>
+      {/* <Header/> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/film" component={FilmPage} />
         <Route path="" component={NotFoundPage} />
-      </Switch> */}
+      </Switch>
       <Footer />
     </div>
   );
